@@ -30,6 +30,7 @@ The integration of Knowledge Graphs ensures that relationships between different
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/sohv/RAG-knowledgegraph.git
+   cd RAG-knowledgegraph
 
 2. **Install dependencies**:
    ```bash
@@ -51,4 +52,32 @@ The integration of Knowledge Graphs ensures that relationships between different
 
 5. **Run the application** : Follow the instructions in the code to generate the knowledge graph successfully and visualize it.
 
+## Tips & Troubleshooting
+1. **Knowledge Graph visualization**
 
+   The knowledge graph generated and uploaded in this repository is in .html format.After generating the knowledge graph for your document, save the file and open it in a browser. For the best experience, we recommend using Mozilla Firefox or Google Chrome. Below is a sample knowledge graph for a document stored in this repository:
+
+   ![Sample Knowledge Graph](documents/knowledgegraph.png)
+
+2. **HuggingFace Token**
+
+   The HuggingFace token was made public in the course of the project as Google Colab's **Secret key** option was not working properly for reasons unknown. Don't ever expose your API key to the public and in the repository. For details on securing your API key while working on Colab, refer to this document: https://docs.google.com/document/d/1D4TP8RCTySyWouqyA8VaDgbhfh1xtqeUqEuUZa1ifRA/edit?usp=sharing
+
+## Contributing
+
+We welcome contributions to improve the system! If you'd like to contribute, please follow these steps:
+
+1. **Fork the repository**
+
+2. **Create a new branch**: Once you have forked the repository, create a new branch for your changes:
+   
+   ```bash
+   git checkout -b your-feature-name
+
+3. **Submit a pull request** with your changes.
+
+
+For any issues related to the code, please raise them in the **Issues** section of the repository.
+
+
+   
