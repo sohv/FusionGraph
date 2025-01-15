@@ -37,7 +37,6 @@ The integration of Knowledge Graphs ensures that relationships between different
 
 3. **Documents for testing the system**:
    The documents are arranged in following structure:
-   ```markdown
   - `documents/`
     - `sample/`
       - `sample.pdf`
