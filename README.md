@@ -55,11 +55,13 @@ The integration of Knowledge Graphs ensures that relationships between different
 ## Tips & Troubleshooting
 1. **Knowledge Graph visualization**
 
-   The knowledge graph generated and uploaded in this repository is in .html format.After generating the knowledge graph for your document, save the file and open it in a browser. For the best experience, we recommend using Mozilla Firefox or Google Chrome. Below is a sample knowledge graph for a document stored in this repository:
+   The knowledge graph generated and uploaded in this repository is in .html format.After generating the knowledge graph for your document, save the file and open it in a browser. For the best experience, we recommend using Mozilla Firefox or Google Chrome.
+
+   Below is a sample knowledge graph for a document stored in this repository:
 
    ![Sample Knowledge Graph](documents/knowledgegraph.png)
 
-2. **HuggingFace Token**
+3. **HuggingFace Token**
 
    The HuggingFace token was made public in the course of the project as Google Colab's **Secret key** option was not working properly for reasons unknown. Don't ever expose your API key to the public and in the repository. For details on securing your API key while working on Colab, refer to this document: https://docs.google.com/document/d/1D4TP8RCTySyWouqyA8VaDgbhfh1xtqeUqEuUZa1ifRA/edit?usp=sharing
 
