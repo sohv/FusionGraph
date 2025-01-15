@@ -36,13 +36,19 @@ The integration of Knowledge Graphs ensures that relationships between different
    pip install -r requirements.txt
 
 3. **Documents for testing the system**:
-   The documents are arranged in following structure:
-  - `documents/`
-    - `sample/`
-      - `sample.pdf`
-      - `sample1.pdf`
-    - `sample_ai/`
-      - `AI Trend story.pdf`
-      - `A_Brief_Introduction_To_AI.pdf`
 
-4. **Run the application** : Follow the instructions in the code to generate the knowledge graph successfully and visualize it.
+   The documents are arranged in following structure:
+   ```bash
+   documents/
+   │
+   ├── sample/
+   │   ├── sample.pdf
+   │   └── sample1.pdf
+   │
+   └── sample_ai/
+       ├── AI Trend story.pdf
+       └── A_Brief_Introduction_To_AI.pdf
+
+5. **Run the application** : Follow the instructions in the code to generate the knowledge graph successfully and visualize it.
+
+
