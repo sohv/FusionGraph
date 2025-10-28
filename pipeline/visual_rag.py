@@ -1,5 +1,5 @@
 """
-Visual RAG Pipeline
+Visual RAG Pipeline with Faiss Integration and Explainability
 Combines text and image retrieval with knowledge graph reasoning
 """
 
@@ -16,12 +16,14 @@ from llama_index.core.base.response.schema import Response
 from llama_index.core.graph_stores import SimpleGraphStore
 
 from ingest.image_ingest import ImageIngestor
+from retrieval.faiss_retriever import FaissRetriever, RetrievalResult
+from explainability.engine import ExplainabilityEngine, QueryExplanation
 
 
 @dataclass
 class VisualRAGResult:
     """
-    Result from Visual RAG query containing multimodal information
+    Enhanced result from Visual RAG query with explainability
     """
     answer: str
     text_sources: List[Dict[str, Any]]
@@ -29,17 +31,19 @@ class VisualRAGResult:
     graph_context: Dict[str, Any]
     confidence_score: float
     provenance: Dict[str, List[str]]
+    explanation: Optional[QueryExplanation] = None
 
 
 class VisualRAGPipeline:
     """
-    Visual RAG Pipeline that combines text and image understanding
+    Enhanced Visual RAG Pipeline with Faiss retrieval and explainability
     """
     
     def __init__(self, 
                  knowledge_graph_index: KnowledgeGraphIndex,
                  image_ingestor: Optional[ImageIngestor] = None,
-                 similarity_threshold: float = 0.7):
+                 similarity_threshold: float = 0.7,
+                 use_faiss: bool = True):
         """
         Initialize Visual RAG Pipeline
         
@@ -47,16 +51,31 @@ class VisualRAGPipeline:
             knowledge_graph_index: Existing KG index from text documents
             image_ingestor: Image processing component
             similarity_threshold: Minimum similarity for retrieval
+            use_faiss: Whether to use Faiss for faster retrieval
         """
         self.kg_index = knowledge_graph_index
         self.image_ingestor = image_ingestor or ImageIngestor()
         self.similarity_threshold = similarity_threshold
+        self.use_faiss = use_faiss
         
         # Get the underlying graph store for direct graph operations
         self.graph_store = knowledge_graph_index.storage_context.graph_store
         
         # Track image nodes separately
         self.image_node_mapping = {}
+        
+        # Initialize Faiss retriever if requested
+        self.faiss_retriever = None
+        if use_faiss:
+            try:
+                self.faiss_retriever = FaissRetriever()
+                print("✅ Faiss retriever initialized")
+            except ImportError:
+                print("⚠️ Faiss not available, falling back to default retrieval")
+                self.use_faiss = False
+        
+        # Initialize explainability engine
+        self.explainability_engine = ExplainabilityEngine()
     
     def add_images_to_kg(self, image_paths: Union[str, List[str]]) -> int:
         """
@@ -98,23 +117,82 @@ class VisualRAGPipeline:
         print(f"Added {len(image_nodes)} nodes to knowledge graph")
         return len(image_nodes)
     
+    def index_documents_in_faiss(self, documents_dir: str = "./documents/text") -> None:
+        """
+        Index text documents in Faiss for faster retrieval
+        
+        Args:
+            documents_dir: Directory containing text documents
+        """
+        if not self.use_faiss or not self.faiss_retriever:
+            print("⚠️ Faiss retriever not available")
+            return
+        
+        documents = []
+        
+        # Load documents from directory
+        if os.path.exists(documents_dir):
+            for filename in os.listdir(documents_dir):
+                if filename.endswith(('.txt', '.md')):
+                    filepath = os.path.join(documents_dir, filename)
+                    try:
+                        with open(filepath, 'r', encoding='utf-8') as f:
+                            content = f.read()
+                            
+                        documents.append({
+                            'text': content,
+                            'source_id': filename,
+                            'source_name': filename,
+                            'metadata': {
+                                'file_path': filepath,
+                                'file_size': len(content)
+                            }
+                        })
+                    except Exception as e:
+                        print(f"Error reading {filepath}: {e}")
+        
+        if documents:
+            print(f"Indexing {len(documents)} documents in Faiss...")
+            self.faiss_retriever.add_documents(documents)
+            self.faiss_retriever.save_index()
+            print(f"✅ Indexed {len(documents)} documents")
+        else:
+            print("No documents found to index")
+    
     def query_with_visual_context(self, 
                                  query: str,
                                  include_images: bool = True,
                                  max_text_results: int = 5,
-                                 max_image_results: int = 3) -> VisualRAGResult:
+                                 max_image_results: int = 3,
+                                 include_explanation: bool = True) -> VisualRAGResult:
         """
-        Execute a query with both text and visual context
+        Execute a query with both text and visual context using enhanced retrieval
         
         Args:
             query: Natural language query
             include_images: Whether to include image sources in results
             max_text_results: Maximum number of text sources to retrieve
             max_image_results: Maximum number of image sources to retrieve
+            include_explanation: Whether to generate explainability information
             
         Returns:
-            VisualRAGResult containing multimodal response
+            VisualRAGResult containing multimodal response with explanations
         """
+        retrieval_results = []
+        retrieval_metadata = None
+        
+        # Use Faiss retrieval if available, otherwise fall back to default
+        if self.use_faiss and self.faiss_retriever:
+            try:
+                retrieval_results, retrieval_metadata = self.faiss_retriever.retrieve(
+                    query, 
+                    top_k=max_text_results,
+                    return_explanations=include_explanation
+                )
+                print(f"🔍 Faiss retrieval found {len(retrieval_results)} results")
+            except Exception as e:
+                print(f"⚠️ Faiss retrieval failed: {e}, falling back to default")
+                self.use_faiss = False
         # Standard text-based KG query
         query_engine = self.kg_index.as_query_engine(
             include_text=True,

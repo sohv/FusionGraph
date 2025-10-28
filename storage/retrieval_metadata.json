@@ -1,0 +1,87 @@
+{
+  "chunk_metadata": {
+    "ai_healthcare_2024_0": {
+      "chunk_id": "ai_healthcare_2024_0",
+      "text": "Artificial intelligence is revolutionizing healthcare by enabling faster diagnosis, personalized treatment plans, and predictive analytics. Machine learning algorithms can analyze medical images, electronic health records, and genomic data to identify patterns that human doctors might miss.",
+      "source_id": "ai_healthcare_2024",
+      "source_name": "AI in Healthcare: 2024 Trends",
+      "chunk_offsets": [
+        0,
+        291
+      ],
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "indexed_time": "2025-10-29T04:55:19.593118",
+      "metadata": {
+        "domain": "healthcare",
+        "year": 2024,
+        "type": "research_paper"
+      }
+    },
+    "cv_deep_learning_2024_0": {
+      "chunk_id": "cv_deep_learning_2024_0",
+      "text": "Computer vision technology has advanced significantly with deep learning models achieving human-level performance in image recognition tasks. Convolutional neural networks (CNNs) and transformer architectures are being used for medical imaging, autonomous vehicles, and surveillance systems.",
+      "source_id": "cv_deep_learning_2024",
+      "source_name": "Computer Vision Deep Learning Advances",
+      "chunk_offsets": [
+        0,
+        291
+      ],
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "indexed_time": "2025-10-29T04:55:19.593141",
+      "metadata": {
+        "domain": "computer_vision",
+        "year": 2024,
+        "type": "technical_report"
+      }
+    },
+    "nlp_llm_2024_0": {
+      "chunk_id": "nlp_llm_2024_0",
+      "text": "Natural language processing has been transformed by large language models like GPT, BERT, and their variants. These models can understand context, generate human-like text, and perform complex reasoning tasks across multiple domains including legal, medical, and scientific texts.",
+      "source_id": "nlp_llm_2024",
+      "source_name": "Large Language Models in NLP",
+      "chunk_offsets": [
+        0,
+        280
+      ],
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "indexed_time": "2025-10-29T04:55:19.593159",
+      "metadata": {
+        "domain": "nlp",
+        "year": 2024,
+        "type": "survey_paper"
+      }
+    },
+    "knowledge_graphs_2024_0": {
+      "chunk_id": "knowledge_graphs_2024_0",
+      "text": "Knowledge graphs provide structured representations of information that enable better reasoning and inference. They connect entities through relationships and can be used for recommendation systems, question answering, and semantic search applications.",
+      "source_id": "knowledge_graphs_2024",
+      "source_name": "Knowledge Graphs for AI Applications",
+      "chunk_offsets": [
+        0,
+        252
+      ],
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "indexed_time": "2025-10-29T04:55:19.593163",
+      "metadata": {
+        "domain": "knowledge_representation",
+        "year": 2024,
+        "type": "tutorial"
+      }
+    }
+  },
+  "id_to_vector_idx": {
+    "ai_healthcare_2024_0": 0,
+    "cv_deep_learning_2024_0": 1,
+    "nlp_llm_2024_0": 2,
+    "knowledge_graphs_2024_0": 3
+  },
+  "vector_idx_to_id": {
+    "0": "ai_healthcare_2024_0",
+    "1": "cv_deep_learning_2024_0",
+    "2": "nlp_llm_2024_0",
+    "3": "knowledge_graphs_2024_0"
+  },
+  "next_vector_idx": 4,
+  "embedding_model_name": "sentence-transformers/all-MiniLM-L6-v2",
+  "embedding_dim": 384
+}

@@ -1,7 +1,3 @@
-"""
-Unit tests for Image Ingestion module
-"""
-
 import unittest
 import os
 import tempfile
@@ -10,7 +6,6 @@ from unittest.mock import Mock, patch, MagicMock
 import numpy as np
 from PIL import Image
 
-# Import the module to test
 try:
     from ingest.image_ingest import ImageIngestor
 except ImportError:

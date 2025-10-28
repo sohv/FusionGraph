@@ -255,34 +255,122 @@ class VisualRAGApp:
                     query=query,
                     include_images=include_images,
                     max_text_results=max_results,
-                    max_image_results=3
+                    max_image_results=3,
+                    include_explanation=True  # Enable explainability
                 )
                 
                 st.session_state.last_result = result
                 st.session_state.query_history.append({
                     'query': query,
                     'timestamp': datetime.now(),
-                    'confidence': result.confidence_score
+                    'confidence': result.confidence_score,
+                    'explanation': result.explanation
                 })
                 
         except Exception as e:
             st.error(f"Error processing query: {str(e)}")
     
     def display_results(self, result):
-        """Display query results with visualizations"""
-        st.subheader(" Results")
+        """Display query results with enhanced explainability"""
+        st.subheader("🎯 Results")
         
-        # Answer section
+        # Answer section with explanation summary
         with st.container():
-            st.markdown("### Answer")
+            st.markdown("### 💬 Answer")
             st.write(result.answer)
             
-            # Confidence metric
-            st.markdown("### Confidence Score")
-            st.progress(result.confidence_score)
-            st.write(f"Confidence: {result.confidence_score:.2%}")
+            # Enhanced confidence display
+            st.markdown("### 📊 Confidence & Quality")
+            confidence_score = result.confidence_score
+            
+            # Color-coded confidence
+            if confidence_score >= 0.8:
+                confidence_color = "🟢"
+                confidence_text = "High"
+            elif confidence_score >= 0.6:
+                confidence_color = "🟡"
+                confidence_text = "Medium"
+            elif confidence_score >= 0.4:
+                confidence_color = "🟠"
+                confidence_text = "Low"
+            else:
+                confidence_color = "🔴"
+                confidence_text = "Very Low"
+            
+            col1, col2 = st.columns(2)
+            with col1:
+                st.metric("Confidence", f"{confidence_color} {confidence_text}", f"{confidence_score:.1%}")
+            with col2:
+                # Show explanation summary if available
+                if result.explanation:
+                    summary = st.session_state.visual_rag_pipeline.explainability_engine.get_explanation_summary(result.explanation)
+                    st.info(summary)
         
-        # Results breakdown
+        # Explainability Panel
+        if result.explanation:
+            with st.expander("🔍 **Explanation & Provenance**", expanded=False):
+                explanation = result.explanation
+                
+                # Confidence factors breakdown
+                st.markdown("#### Confidence Factors")
+                confidence_data = explanation.confidence
+                
+                factor_cols = st.columns(3)
+                factors = confidence_data.get('factors', {})
+                
+                with factor_cols[0]:
+                    st.metric("Retrieval Quality", f"{factors.get('retrieval_quality', 0):.2f}")
+                with factor_cols[1]:
+                    st.metric("Source Diversity", f"{factors.get('source_diversity', 0):.2f}")
+                with factor_cols[2]:
+                    st.metric("LLM Confidence", f"{factors.get('llm_confidence', 0):.2f}")
+                
+                st.info(f"💡 {confidence_data.get('explanation', 'No detailed explanation available')}")
+                
+                # Provenance sources
+                st.markdown("#### 📚 Source Provenance")
+                provenance = explanation.provenance
+                
+                for i, source in enumerate(provenance[:5]):  # Show top 5 sources
+                    with st.container():
+                        source_type_emoji = "📄" if source['type'] == 'text' else "🖼️"
+                        
+                        st.markdown(f"**{source_type_emoji} Source {source['rank']}: {source['source_name']}**")
+                        st.markdown(f"*Similarity Score: {source['similarity_score']:.3f}*")
+                        
+                        if source['type'] == 'text':
+                            st.text_area(
+                                f"Text snippet",
+                                source['text_snippet'],
+                                height=100,
+                                key=f"source_text_{i}",
+                                disabled=True
+                            )
+                        elif source['type'] == 'image':
+                            st.write(f"**OCR Text:** {source.get('ocr_text', 'No OCR text available')}")
+                        
+                        st.markdown("---")
+                
+                # Chain of thought trace
+                if explanation.cot_trace:
+                    st.markdown("#### 🧠 Reasoning Trace")
+                    for step in explanation.cot_trace:
+                        st.markdown(f"• {step}")
+                
+                # Retrieval explanation
+                if explanation.retrieval_explanation:
+                    st.markdown("#### ⚙️ Retrieval Details")
+                    ret_exp = explanation.retrieval_explanation
+                    
+                    detail_cols = st.columns(4)
+                    with detail_cols[0]:
+                        st.metric("Query Norm", f"{ret_exp.query_embedding_norm:.3f}")
+                    with detail_cols[1]:
+                        st.metric("Top-K Requested", ret_exp.top_k_requested)
+                    with detail_cols[2]:
+                        st.metric("Total Candidates", ret_exp.total_candidates)
+                    with detail_cols[3]:
+                        st.metric("Similarity Method", ret_exp.similarity_method)
         col1, col2, col3 = st.columns(3)
         
         with col1:

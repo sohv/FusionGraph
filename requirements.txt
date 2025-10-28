@@ -11,6 +11,10 @@ pyvis
 ipython
 pypdf
 
+# Vector search and retrieval
+faiss-cpu
+scikit-learn
+
 # Visual RAG dependencies
 pillow
 pytesseract
@@ -27,3 +31,4 @@ uvicorn
 networkx
 plotly
 streamlit-agraph
+pytest
