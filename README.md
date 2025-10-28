@@ -1,7 +1,9 @@
-# RAG System with Knowledge Graph and LlamaIndex
+# FusionRAG
 
 ## Introduction
 This project aims to build a Retrieval-Augmented Generation (RAG) system that combines the power of **Knowledge Graphs** and **LlamaIndex** to provide advanced document retrieval and natural language generation capabilities. The goal is to develop a system that can efficiently retrieve relevant information from a structured knowledge base and use this information to generate high-quality, context-aware responses.
+
+> **📢 Video demo and website coming soon!**
 
 ## Key Features
 - **Knowledge Graph Integration**: The project leverages a structured Knowledge Graph that enables better organization, storage, and retrieval of interconnected data.
@@ -31,8 +33,8 @@ The integration of Knowledge Graphs ensures that relationships between different
 ### Basic Setup
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/sohv/RAG-knowledgegraph.git
-   cd RAG-knowledgegraph
+   git clone https://github.com/sohv/fusionrag.git
+   cd fusionrag
 
 2. **Install dependencies**:
    ```bash
@@ -112,7 +114,7 @@ python run_tests.py --integration
 
    Below is a sample knowledge graph for a document stored in this repository:
 
-   ![Sample Knowledge Graph](documents/knowledgegraph.png)
+   ![Sample Knowledge Graph](documents/images/knowledgegraph.png)
 
 3. **HuggingFace Token**
 
