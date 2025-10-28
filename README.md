@@ -27,6 +27,8 @@ The integration of Knowledge Graphs ensures that relationships between different
 - **PyVis** : PyVis is used for for visualizing graph structures.
 
 ## Getting Started
+
+### Basic Setup
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/sohv/RAG-knowledgegraph.git
@@ -36,21 +38,72 @@ The integration of Knowledge Graphs ensures that relationships between different
    ```bash
    pip install -r requirements.txt
 
-3. **Documents for testing the system**:
+3. **Configure HuggingFace Token**:
+   - Get your token from [HuggingFace](https://huggingface.co/settings/tokens)
+   - Set it as environment variable: `export HF_TOKEN=your_token_here`
+   - Or configure it directly in the notebook/web interface
 
-   The documents are arranged in following structure:
-   ```bash
-   documents/
-   │
-   ├── sample/
-   │   ├── sample.pdf
-   │   └── sample1.pdf
-   │
-   └── sample_ai/
-       ├── AI Trend story.pdf
-       └── A_Brief_Introduction_To_AI.pdf
+### Quick Start Options
 
-5. **Run the application** : Follow the instructions in the code to generate the knowledge graph successfully and visualize it.
+#### Option 1: Interactive Web Interface (Recommended)
+```bash
+# Launch the enhanced web interface
+streamlit run webapp/app.py
+```
+- Open your browser to `http://localhost:8501`
+- Configure your HuggingFace token in the sidebar
+- Upload documents and images
+- Start querying with natural language!
+
+#### Option 2: Demo Notebook
+```bash
+# Launch Jupyter notebook with comprehensive demo
+jupyter lab notebooks/visual_rag_demo.ipynb
+```
+
+#### Option 3: Original Notebook
+```bash
+# Run the original implementation
+jupyter notebook rag_with_kgraph_llamaindex.ipynb
+```
+
+#### Option 4: Automated Setup
+```bash
+# Run the startup script for guided setup
+python start.py
+```
+
+### Enhanced Features (New!)
+- **🖼️ Visual RAG**: Process images with OCR, captioning, and object detection
+- **🌐 Interactive Web UI**: Real-time visualization and feedback collection
+- **🔍 Enhanced Provenance**: Detailed source tracking for transparency
+- **💬 Feedback System**: Improve results through user interactions
+
+### Documents for Testing
+The documents are arranged in following structure:
+```bash
+documents/
+│
+├── sample/
+│   ├── sample.pdf
+│   └── sample1.pdf
+│
+└── sample_ai/
+    ├── AI Trend story.pdf
+    └── A_Brief_Introduction_To_AI.pdf
+```
+
+### Running Tests
+```bash
+# Quick validation
+python run_tests.py --quick
+
+# Full test suite
+python run_tests.py
+
+# Integration tests (requires models)
+python run_tests.py --integration
+```
 
 ## Tips & Troubleshooting
 1. **Knowledge Graph visualization**
