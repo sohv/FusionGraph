@@ -1,7 +1,7 @@
-# FusionRAG
+# FusionGraph
 
 ## Introduction
-This project aims to build a Retrieval-Augmented Generation (RAG) system that combines the power of **Knowledge Graphs** and **LlamaIndex** to provide advanced document retrieval and natural language generation capabilities. The goal is to develop a system that can efficiently retrieve relevant information from a structured knowledge base and use this information to generate high-quality, context-aware responses.
+This project aims to build a Retrieval-Augmented Generation (RAG) system that combines the power of **Knowledge Graphs** and **LlamaIndex** to provide advanced document retrieval and natural language generation capabilities. The goal is to develop a system that can efficiently retrieve relevant information from a structured knowledge base and use this information to generate high-quality, context-aware responses. This was recently extended to Multimodal RAG and an interactive web UI that offers real-time visualization of knowledge graphs is coming up soon. Stay tuned!
 
 > **📢 Video demo and website coming soon!**
 
@@ -33,8 +33,8 @@ The integration of Knowledge Graphs ensures that relationships between different
 ### Basic Setup
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/sohv/fusionrag.git
-   cd fusionrag
+   git clone https://github.com/sohv/FusionGraph.git
+   cd FusionGraph
 
 2. **Install dependencies**:
    ```bash
@@ -75,7 +75,7 @@ jupyter notebook rag_with_kgraph_llamaindex.ipynb
 python start.py
 ```
 
-### Enhanced Features (New!)
+### Enhanced Features
 - **🖼️ Visual RAG**: Process images with OCR, captioning, and object detection
 - **🌐 Interactive Web UI**: Real-time visualization and feedback collection
 - **🔍 Enhanced Provenance**: Detailed source tracking for transparency
