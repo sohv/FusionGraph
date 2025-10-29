@@ -1,0 +1,73 @@
+{
+  "doc_id": "Quantum_Computing_Guide",
+  "title": "Quantum Computing: A Comprehensive Guide",
+  "domain": "Technical_Documentation",
+  "source_file": "data/pdfs/Quantum_Computing_Guide.pdf",
+  "num_pages": 3,
+  "language": "en",
+  "created_at": "2025-10-29T12:00:00Z",
+  "file_size_mb": 1.8,
+  "checksum": "sha256:def789ghi012...",
+  "extraction_method": "synthetic_generation",
+  "pages": [
+    {
+      "page_num": 1,
+      "text_file": "data/text/Quantum_Computing_Guide/page_01.txt",
+      "word_count": 298,
+      "images": [
+        {
+          "file": "data/images/Quantum_Computing_Guide/page_01_img_1.png",
+          "bbox": [200, 400, 800, 700],
+          "caption": "Basic quantum circuit showing quantum gates and their operations on qubit states",
+          "type": "diagram",
+          "ocr_confidence": null
+        }
+      ],
+      "ocr_file": null
+    },
+    {
+      "page_num": 2,
+      "text_file": "data/text/Quantum_Computing_Guide/page_02.txt",
+      "word_count": 351,
+      "images": [
+        {
+          "file": "data/images/Quantum_Computing_Guide/page_02_img_1.png",
+          "bbox": [100, 300, 900, 650],
+          "caption": "Comparison of quantum computing hardware platforms showing performance characteristics",
+          "type": "chart",
+          "ocr_confidence": null
+        }
+      ],
+      "ocr_file": null
+    },
+    {
+      "page_num": 3,
+      "text_file": "data/text/Quantum_Computing_Guide/page_03.txt",
+      "word_count": 423,
+      "images": [
+        {
+          "file": "data/images/Quantum_Computing_Guide/page_03_img_1.png",
+          "bbox": [50, 200, 1150, 500],
+          "caption": "Quantum computing development roadmap showing projected milestones and applications timeline",
+          "type": "timeline",
+          "ocr_confidence": null
+        }
+      ],
+      "ocr_file": null
+    }
+  ],
+  "entities_extracted_count": 38,
+  "key_concepts": [
+    "quantum computing",
+    "qubits",
+    "superposition",
+    "entanglement",
+    "quantum algorithms",
+    "quantum machine learning",
+    "quantum hardware",
+    "quantum error correction"
+  ],
+  "multimodal": true,
+  "total_images": 3,
+  "total_word_count": 1072
+}

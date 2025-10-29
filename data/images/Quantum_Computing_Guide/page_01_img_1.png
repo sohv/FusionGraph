@@ -1,0 +1,10 @@
+# Quantum Circuit Diagram
+# This would be an actual PNG/JPEG image showing:
+# - Quantum gates (X, Y, Z, H, CNOT)
+# - Qubit lines with quantum states
+# - Measurement operations
+# - Quantum circuit notation
+# File: quantum_circuit_diagram.png
+# Size: 900x400 pixels
+# Caption: "Basic quantum circuit showing quantum gates and their operations on qubit states"
+IMAGE_PLACEHOLDER_quantum_circuit_diagram

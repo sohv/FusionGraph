@@ -1,0 +1,72 @@
+{
+  "doc_id": "AI_Neural_Networks",
+  "title": "Neural Networks: Foundations and Applications",
+  "domain": "AI_Research",
+  "source_file": "data/pdfs/AI_Neural_Networks.pdf",
+  "num_pages": 3,
+  "language": "en",
+  "created_at": "2025-10-29T12:00:00Z",
+  "file_size_mb": 2.1,
+  "checksum": "sha256:abc123def456...",
+  "extraction_method": "synthetic_generation",
+  "pages": [
+    {
+      "page_num": 1,
+      "text_file": "data/text/AI_Neural_Networks/page_01.txt",
+      "word_count": 245,
+      "images": [
+        {
+          "file": "data/images/AI_Neural_Networks/page_01_img_1.png",
+          "bbox": [100, 200, 700, 600],
+          "caption": "Basic feedforward neural network architecture showing information flow from input to output layers",
+          "type": "diagram",
+          "ocr_confidence": null
+        }
+      ],
+      "ocr_file": null
+    },
+    {
+      "page_num": 2,
+      "text_file": "data/text/AI_Neural_Networks/page_02.txt",
+      "word_count": 312,
+      "images": [
+        {
+          "file": "data/images/AI_Neural_Networks/page_02_img_1.png",
+          "bbox": [150, 350, 850, 650],
+          "caption": "Recurrent Neural Network architecture showing temporal dependencies and hidden state propagation",
+          "type": "diagram",
+          "ocr_confidence": null
+        }
+      ],
+      "ocr_file": null
+    },
+    {
+      "page_num": 3,
+      "text_file": "data/text/AI_Neural_Networks/page_03.txt",
+      "word_count": 387,
+      "images": [
+        {
+          "file": "data/images/AI_Neural_Networks/page_03_img_1.png",
+          "bbox": [50, 150, 750, 550],
+          "caption": "Training progress showing loss and accuracy curves for neural network optimization",
+          "type": "chart",
+          "ocr_confidence": null
+        }
+      ],
+      "ocr_file": null
+    }
+  ],
+  "entities_extracted_count": 42,
+  "key_concepts": [
+    "artificial neural networks",
+    "backpropagation",
+    "convolutional neural networks",
+    "recurrent neural networks",
+    "gradient descent",
+    "overfitting",
+    "regularization"
+  ],
+  "multimodal": true,
+  "total_images": 3,
+  "total_word_count": 944
+}

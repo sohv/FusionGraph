@@ -1,0 +1,102 @@
+[
+  {
+    "id": "Q001",
+    "query": "What are the main types of neural network architectures?",
+    "type": "factual_retrieval",
+    "complexity": "simple",
+    "expected_domains": ["AI_Research"],
+    "requires_multimodal": false,
+    "ground_truth_concepts": ["feedforward", "convolutional", "recurrent", "CNN", "RNN", "LSTM"],
+    "expected_sources": ["AI_Neural_Networks"]
+  },
+  {
+    "id": "Q002",
+    "query": "How does backpropagation work in neural network training?",
+    "type": "process_explanation",
+    "complexity": "medium",
+    "expected_domains": ["AI_Research"],
+    "requires_multimodal": false,
+    "ground_truth_concepts": ["backpropagation", "gradient", "weights", "training", "optimization"],
+    "expected_sources": ["AI_Neural_Networks"]
+  },
+  {
+    "id": "Q003",
+    "query": "What is quantum superposition and how does it differ from classical bits?",
+    "type": "conceptual_comparison",
+    "complexity": "medium",
+    "expected_domains": ["Technical_Documentation"],
+    "requires_multimodal": false,
+    "ground_truth_concepts": ["superposition", "qubits", "classical bits", "quantum states"],
+    "expected_sources": ["Quantum_Computing_Guide"]
+  },
+  {
+    "id": "Q004",
+    "query": "Compare quantum and classical computing paradigms",
+    "type": "comparative_analysis",
+    "complexity": "complex",
+    "expected_domains": ["Technical_Documentation"],
+    "requires_multimodal": false,
+    "ground_truth_concepts": ["quantum computing", "classical computing", "qubits", "bits", "superposition"],
+    "expected_sources": ["Quantum_Computing_Guide"]
+  },
+  {
+    "id": "Q005",
+    "query": "What do the neural network architecture diagrams show?",
+    "type": "multimodal_query",
+    "complexity": "simple",
+    "expected_domains": ["AI_Research"],
+    "requires_multimodal": true,
+    "ground_truth_concepts": ["neural network", "architecture", "layers", "connections"],
+    "expected_sources": ["AI_Neural_Networks"]
+  },
+  {
+    "id": "Q006",
+    "query": "What are Shor's and Grover's algorithms used for?",
+    "type": "factual_retrieval",
+    "complexity": "medium",
+    "expected_domains": ["Technical_Documentation"],
+    "requires_multimodal": false,
+    "ground_truth_concepts": ["Shor's algorithm", "Grover's algorithm", "factoring", "search", "cryptography"],
+    "expected_sources": ["Quantum_Computing_Guide"]
+  },
+  {
+    "id": "Q007",
+    "query": "How do training curves help monitor neural network performance?",
+    "type": "multimodal_query",
+    "complexity": "medium",
+    "expected_domains": ["AI_Research"],
+    "requires_multimodal": true,
+    "ground_truth_concepts": ["training curves", "loss", "accuracy", "overfitting", "validation"],
+    "expected_sources": ["AI_Neural_Networks"]
+  },
+  {
+    "id": "Q008",
+    "query": "What does the quantum computing roadmap predict for the next 20 years?",
+    "type": "multimodal_query",
+    "complexity": "complex",
+    "expected_domains": ["Technical_Documentation"],
+    "requires_multimodal": true,
+    "ground_truth_concepts": ["quantum roadmap", "timeline", "milestones", "applications", "future"],
+    "expected_sources": ["Quantum_Computing_Guide"]
+  },
+  {
+    "id": "Q009",
+    "query": "What regularization techniques prevent overfitting in neural networks?",
+    "type": "problem_solution",
+    "complexity": "medium",
+    "expected_domains": ["AI_Research"],
+    "requires_multimodal": false,
+    "ground_truth_concepts": ["regularization", "overfitting", "dropout", "batch normalization", "early stopping"],
+    "expected_sources": ["AI_Neural_Networks"]
+  },
+  {
+    "id": "Q010",
+    "query": "How do quantum and classical machine learning approaches differ?",
+    "type": "cross_document_synthesis",
+    "complexity": "complex",
+    "expected_domains": ["AI_Research", "Technical_Documentation"],
+    "requires_multimodal": false,
+    "ground_truth_concepts": ["quantum machine learning", "classical machine learning", "neural networks", "quantum algorithms"],
+    "expected_sources": ["AI_Neural_Networks", "Quantum_Computing_Guide"]
+  }
+]

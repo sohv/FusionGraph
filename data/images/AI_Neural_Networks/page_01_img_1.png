@@ -1,0 +1,11 @@
+# Neural Network Architecture Diagram
+# This would be an actual PNG/JPEG image showing:
+# - Input layer with 4 nodes
+# - Hidden layer with 6 nodes  
+# - Output layer with 3 nodes
+# - Connections between layers with weights
+# - Activation function symbols
+# File: feedforward_network_diagram.png
+# Size: 800x600 pixels
+# Caption: "Basic feedforward neural network architecture showing information flow from input to output layers"
+IMAGE_PLACEHOLDER_feedforward_network_diagram

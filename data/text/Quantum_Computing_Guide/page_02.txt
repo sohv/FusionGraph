@@ -1,0 +1,46 @@
+Chapter 2: Quantum Algorithms and Hardware
+
+Quantum algorithms exploit quantum mechanical properties to solve specific problems more efficiently than classical algorithms. Understanding these algorithms is crucial for appreciating quantum computing's potential.
+
+Notable Quantum Algorithms:
+
+Shor's Algorithm:
+Developed by Peter Shor in 1994, this algorithm can efficiently factor large integers, which has significant implications for cryptography. The algorithm demonstrates exponential speedup over the best known classical factoring algorithms.
+
+Key features:
+- Uses quantum Fourier transform
+- Threatens current RSA encryption methods
+- Requires thousands of logical qubits for practical implementation
+
+Grover's Algorithm:
+Provides quadratic speedup for unstructured search problems. While classical algorithms require O(N) operations to search an unsorted database, Grover's algorithm requires only O(√N) operations.
+
+Applications:
+- Database search optimization
+- Solving NP-complete problems
+- Cryptanalysis of symmetric encryption
+
+Quantum Hardware Platforms:
+
+Superconducting Qubits:
+- Used by IBM, Google, and Rigetti
+- Operate at extremely low temperatures (millikelvin)
+- Fast gate operations but short coherence times
+
+Trapped Ion Systems:
+- High-fidelity operations
+- Longer coherence times
+- Scalability challenges for large systems
+
+Photonic Quantum Computing:
+- Room temperature operation
+- Natural for quantum communication
+- Challenges in creating deterministic interactions
+
+Current Limitations:
+- Quantum decoherence: Qubits lose their quantum properties quickly
+- Error rates: Current systems have high error rates requiring error correction
+- Limited qubit counts: Largest systems have hundreds of qubits
+- Programming complexity: Requires understanding of quantum mechanics
+
+The hardware comparison chart shows the trade-offs between different quantum computing platforms in terms of coherence time, gate fidelity, and scalability.

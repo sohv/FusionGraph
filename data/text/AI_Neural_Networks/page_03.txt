@@ -1,0 +1,37 @@
+Chapter 3: Training Neural Networks
+
+Training a neural network involves adjusting its parameters (weights and biases) to minimize the difference between predicted and actual outputs. This process requires careful consideration of several factors.
+
+The Training Process:
+1. Forward Propagation: Input data flows through the network to produce predictions
+2. Loss Calculation: Compare predictions with ground truth using a loss function
+3. Backpropagation: Calculate gradients of the loss with respect to network parameters
+4. Parameter Update: Adjust weights and biases using optimization algorithms
+
+Loss Functions:
+Different types of problems require different loss functions:
+- Mean Squared Error (MSE): Used for regression problems
+- Cross-entropy: Used for classification tasks
+- Huber loss: Robust loss function for regression with outliers
+
+Optimization Algorithms:
+- Gradient Descent: Basic optimization algorithm that updates parameters in the direction of steepest descent
+- Stochastic Gradient Descent (SGD): Uses random samples to estimate gradients
+- Adam: Adaptive learning rate algorithm that combines momentum with adaptive learning rates
+- RMSprop: Addresses the diminishing learning rate problem in AdaGrad
+
+Regularization Techniques:
+To prevent overfitting and improve generalization:
+- Dropout: Randomly deactivate neurons during training
+- L1/L2 Regularization: Add penalty terms to the loss function
+- Batch Normalization: Normalize inputs to each layer
+- Early Stopping: Stop training when validation performance stops improving
+
+Hyperparameter Tuning:
+Key hyperparameters to optimize include:
+- Learning rate: Controls the step size of parameter updates
+- Batch size: Number of samples processed before updating parameters
+- Number of epochs: Complete passes through the training data
+- Network architecture: Number of layers and neurons per layer
+
+The training curves diagram illustrates how loss decreases and accuracy increases over training epochs for both training and validation sets.

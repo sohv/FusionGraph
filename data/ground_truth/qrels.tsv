@@ -1,0 +1,24 @@
+# TREC-style relevance judgments (qrels)
+# Format: query_id iteration doc_id relevance_score
+# Relevance: 0=not relevant, 1=partially relevant, 2=highly relevant
+
+Q001	0	AI_Neural_Networks	2
+Q001	0	Quantum_Computing_Guide	0
+Q002	0	AI_Neural_Networks	2
+Q002	0	Quantum_Computing_Guide	0
+Q003	0	AI_Neural_Networks	0
+Q003	0	Quantum_Computing_Guide	2
+Q004	0	AI_Neural_Networks	1
+Q004	0	Quantum_Computing_Guide	2
+Q005	0	AI_Neural_Networks	2
+Q005	0	Quantum_Computing_Guide	0
+Q006	0	AI_Neural_Networks	0
+Q006	0	Quantum_Computing_Guide	2
+Q007	0	AI_Neural_Networks	2
+Q007	0	Quantum_Computing_Guide	0
+Q008	0	AI_Neural_Networks	0
+Q008	0	Quantum_Computing_Guide	2
+Q009	0	AI_Neural_Networks	2
+Q009	0	Quantum_Computing_Guide	0
+Q010	0	AI_Neural_Networks	2
+Q010	0	Quantum_Computing_Guide	2

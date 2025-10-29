@@ -1,0 +1,10 @@
+# Quantum Hardware Comparison Chart
+# This would be an actual PNG/JPEG image showing:
+# - Bar charts comparing different quantum platforms
+# - Metrics: coherence time, gate fidelity, qubit count
+# - Superconducting vs Trapped Ion vs Photonic systems
+# - Performance trade-offs visualization
+# File: hardware_comparison_chart.png
+# Size: 1000x700 pixels
+# Caption: "Comparison of quantum computing hardware platforms showing performance characteristics"
+IMAGE_PLACEHOLDER_hardware_comparison_chart

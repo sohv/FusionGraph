@@ -1,0 +1,10 @@
+# RNN Architecture Diagram
+# This would be an actual PNG/JPEG image showing:
+# - Unfolded RNN structure across time steps
+# - Hidden state connections between time steps
+# - Input and output at each time step
+# - LSTM cell internal structure
+# File: rnn_architecture_diagram.png
+# Size: 1000x500 pixels
+# Caption: "Recurrent Neural Network architecture showing temporal dependencies and hidden state propagation"
+IMAGE_PLACEHOLDER_rnn_architecture_diagram

@@ -1,0 +1,30 @@
+Chapter 2: Types of Neural Networks
+
+Different architectures of neural networks have been developed to solve specific types of problems. Understanding these architectures is crucial for selecting the appropriate model for a given task.
+
+Feedforward Networks:
+The simplest type of neural network where information flows in one direction from input to output. These networks consist of:
+- Input layer: Receives the initial data
+- Hidden layers: Perform computations and feature extraction
+- Output layer: Produces the final result
+
+Convolutional Neural Networks (CNNs):
+Specifically designed for processing grid-like data such as images. CNNs use:
+- Convolutional layers: Apply filters to detect local features
+- Pooling layers: Reduce spatial dimensions while preserving important information
+- Fully connected layers: Combine features for final classification
+
+Applications of CNNs include:
+- Computer vision tasks (object detection, image classification)
+- Medical image analysis (X-ray interpretation, MRI scanning)
+- Autonomous driving (road sign recognition, pedestrian detection)
+
+Recurrent Neural Networks (RNNs):
+Designed to process sequential data by maintaining memory of previous inputs. RNNs are particularly useful for:
+- Natural language processing (translation, text generation)
+- Time series prediction (stock prices, weather forecasting)
+- Speech recognition and synthesis
+
+The architecture diagram shows how RNNs maintain hidden states that carry information across time steps, enabling them to learn temporal dependencies in data.
+
+Long Short-Term Memory (LSTM) networks are a special type of RNN that can learn long-term dependencies more effectively than traditional RNNs.

@@ -1,0 +1,10 @@
+# Training Curves Chart
+# This would be an actual PNG/JPEG image showing:
+# - Training loss decreasing over epochs
+# - Validation loss curve with potential overfitting
+# - Training and validation accuracy increasing
+# - Learning rate scheduling effects
+# File: training_curves_chart.png
+# Size: 800x600 pixels
+# Caption: "Training progress showing loss and accuracy curves for neural network optimization"
+IMAGE_PLACEHOLDER_training_curves_chart
