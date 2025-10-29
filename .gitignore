@@ -3,3 +3,4 @@ venv/
 .venv/
 draft/
 __pycache__/
+.env
